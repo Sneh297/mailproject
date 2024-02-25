@@ -16,6 +16,10 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(express.static('public'));
 
+app.get("/h", (req,res)=>{
+res.send("Hello World");
+});
+
 app.post('/form', (req, res) => {
   const userInput = req.body.text;
   const userEmail = req.body.email;
