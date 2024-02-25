@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sendEmail = require('./mail.js');
 const cors = require('cors');
-
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(
