@@ -14,8 +14,10 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(bodyParser.json({ limit: '50mb' }));
-app.use(express.static('public'));
-
+app.get('/', (req, res) => {
+  const indexPath = path.join(__dirname, 'public', 'index.html');
+  res.sendFile(indexPath);
+});
 
 
 app.post('/form', (req, res) => {
