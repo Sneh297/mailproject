@@ -5,13 +5,13 @@ const cors = require('cors');
 
 const app = express();
 const port = 3000;
-app.use(
-  cors({
-    origin: ['https://mailproject.vercel.app/'],
-    methods: ['POST', 'GET'],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ['https://mailproject.vercel.app/'],
+//     methods: ['POST', 'GET'],
+//     credentials: true,
+//   })
+// );
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(express.static('public'));
