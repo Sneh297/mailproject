@@ -14,16 +14,7 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(bodyParser.json({ limit: '50mb' }));
-app.get('/', async (req, res) => {
-  try {
-    const htmlFilePath = path.join('./index.html');
-    const htmlContent = await fs.readFile(htmlFilePath, 'utf8');
-    res.send(htmlContent);
-  } catch (error) {
-    console.error('Error reading HTML file:', error);
-    res.status(500).send('Internal Server Error');
-  }
-});
+app.use(express.static('public');
 
 app.post('/form', (req, res) => {
   const userInput = req.body.text;
